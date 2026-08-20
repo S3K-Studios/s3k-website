@@ -3,7 +3,6 @@ import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-
 const Footer: React.FC = () => {
   const { t } = useTranslation();
 
@@ -43,20 +42,13 @@ const Footer: React.FC = () => {
               &copy; 2025 {t("footer.gameStudio")}.{" "}
               {t("footer.allRightsReserved")}
             </p>
-            <div className="flex flex-col gap-1 mt-2">
-              <Link className="text-primary hover:underline" to="/atomicboom/privacy">
-                {t("footer.privacyPolicy")}
-              </Link>
-              <Link className="text-primary hover:underline" to="/atomicboom/terms">
-                {t("footer.termsOfService")}
-              </Link>
-              <Link className="text-primary hover:underline" to="/atomicboom/data-deletion">
-                {t("footer.dataDeletion")}
-              </Link>
-            </div>
+            <Link
+              className="text-primary hover:underline mt-2 inline-block"
+              to="/legal"
+            >
+              {t("footer.legal")}
+            </Link>
           </div>
-
-
         </div>
       </div>
     </footer>

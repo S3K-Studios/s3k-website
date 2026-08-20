@@ -13,9 +13,7 @@
     "creatingImmersive": "Creating immersive gaming experiences",
     "connectWithUs": "Connect with us",
     "allRightsReserved": "All rights reserved.",
-    "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service",
-    "dataDeletion": "Account & Data Deletion"
+    "legal": "Legal"
   },
   "landing": {
     "welcome": "Welcome to S3K Studios",
@@ -51,13 +49,7 @@
     "questLog": "Quest Log: Our Lore",
     "timeline1Badge": "Tutorial Level",
     "timeline1Title": "The Garage Beginnings",
-    "timeline1Desc": "Three friends, one coffee machine, and zero budget. We cobbled together 'Neon Nights', our first prototype that went unexpectedly viral on Reddit.",
-    "timeline2Badge": "Leveling Up",
-    "timeline2Title": "Expanded the Party",
-    "timeline2Desc": "Hired our first full-time artist and sound designer. Moved from a garage to a real office! Released 'Cyber Samurai'.",
-    "timeline3Badge": "New Game+",
-    "timeline3Title": "Current Quest",
-    "timeline3Desc": "Now working on our most ambitious project yet. Our team has grown to 15 amazing humans. Still drinking way too much coffee.",
+    "timeline1Desc": "Three friends, one coffee machine, and zero budget. We built our first mobile games, Atomic Boom and 777 Pinbal.",
     "clanValues": "Clan Values",
     "playerFirst": "Player First",
     "playerFirstDesc": "We build games we want to play. No pay-to-win, ever.",

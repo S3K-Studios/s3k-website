@@ -13,9 +13,7 @@
     "creatingImmersive": "Sürükleyici oyun deneyimleri yaratıyoruz",
     "connectWithUs": "Bize ulaşın",
     "allRightsReserved": "Tüm hakları saklıdır.",
-    "privacyPolicy": "Gizlilik Politikası",
-    "termsOfService": "Kullanım Şartları",
-    "dataDeletion": "Hesap ve Veri Silme"
+    "legal": "Yasal Bilgiler"
   },
   "landing": {
     "welcome": "S3K Studios'a Hoşgeldiniz",
@@ -51,13 +49,7 @@
     "questLog": "Görev Günlüğü: Hikayemiz",
     "timeline1Badge": "Öğretici Bölüm",
     "timeline1Title": "Garajda Başladık",
-    "timeline1Desc": "Üç arkadaş, bir kahve makinesi ve sıfır bütçe. Beklenmedik bir şekilde Reddit'te viral olan ilk prototipimiz 'Neon Nights'ı bir araya getirdik.",
-    "timeline2Badge": "Seviye Atlanıyor",
-    "timeline2Title": "Partiyi Genişlettik",
-    "timeline2Desc": "İlk tam zamanlı sanatçımızı ve ses tasarımcımızı işe aldık. Garajdan gerçek bir ofise taşındık! 'Cyber Samurai'yı piyasaya sürdük.",
-    "timeline3Badge": "New Game+",
-    "timeline3Title": "Güncel Görev",
-    "timeline3Desc": "Şu ana kadarki en iddialı projemiz üzerinde çalışıyoruz. Ekibimiz 15 harika insana ulaştı. Hala çok fazla kahve içiyoruz.",
+    "timeline1Desc": "Üç arkadaş, bir kahve makinesi ve sıfır bütçe. İlk mobil oyunlarımız Atomic Boom ve 777 Pinbal'ı bir araya getirdik.",
     "clanValues": "Klan Değerleri",
     "playerFirst": "Önce Oyuncu",
     "playerFirstDesc": "Oynamak istediğimiz oyunlar yapıyoruz. Asla kazanmak için öde (pay-to-win) yok.",

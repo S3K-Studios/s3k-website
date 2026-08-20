@@ -2,19 +2,37 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { Card, CardBody, Image, Button, Chip } from "@heroui/react";
 import { useTranslation } from "react-i18next";
+
 import { useGames } from "../hooks/useGames";
+import { getLegalApp } from "../data/legalApps";
+
+const legalDocLabels: Record<string, { tr: string; en: string }> = {
+  privacy: { tr: "Gizlilik Politikası", en: "Privacy Policy" },
+  terms: { tr: "Kullanım Şartları", en: "Terms of Service" },
+  "data-deletion": { tr: "Hesap ve Veri Silme", en: "Account & Data Deletion" },
+};
 
 const GameDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang: "tr" | "en" = i18n.language === "tr" ? "tr" : "en";
   const { games, loading, error } = useGames();
+  const legalApp = getLegalApp(id);
 
   if (loading) {
-    return <div className="container mx-auto px-4 py-12 text-center text-xl">Yükleniyor...</div>;
+    return (
+      <div className="container mx-auto px-4 py-12 text-center text-xl">
+        Yükleniyor...
+      </div>
+    );
   }
 
   if (error) {
-    return <div className="container mx-auto px-4 py-12 text-center text-xl text-danger">Oyun detayları yüklenirken hata oluştu.</div>;
+    return (
+      <div className="container mx-auto px-4 py-12 text-center text-xl text-danger">
+        Oyun detayları yüklenirken hata oluştu.
+      </div>
+    );
   }
 
   const game = games.find((g) => g.id === id);
@@ -84,6 +102,24 @@ const GameDetailPage: React.FC = () => {
                 ))}
               </div>
             </div>
+            {legalApp && (
+              <div className="mt-4">
+                <h3 className="font-semibold">
+                  {lang === "tr" ? "Yasal Belgeler" : "Legal Documents"}
+                </h3>
+                <div className="flex flex-col gap-2 mt-2">
+                  {legalApp.docs.map((doc) => (
+                    <Link
+                      key={doc}
+                      className="text-primary hover:underline text-sm"
+                      to={`/legal/${legalApp.slug}/${doc}`}
+                    >
+                      {legalDocLabels[doc][lang]}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </CardBody>
         </Card>
       </div>
