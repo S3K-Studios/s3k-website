@@ -16,7 +16,7 @@ const LegalIndexPage: React.FC = () => {
   const lang: "tr" | "en" = i18n.language === "tr" ? "tr" : "en";
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <div className="container mx-auto px-4 pt-24 pb-12 max-w-4xl">
       <h1 className="text-3xl font-bold mb-2">
         {lang === "tr" ? "Yasal Sayfalar" : "Legal Documents"}
       </h1>

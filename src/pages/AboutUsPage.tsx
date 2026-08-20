@@ -4,6 +4,7 @@ import AboutHeroSection from "../components/about/AboutHeroSection";
 import OurStorySection from "../components/about/OurStorySection";
 import TeamSection from "../components/about/TeamSection";
 import ValuesSection from "../components/about/ValuesSection";
+import WhyChooseUsSection from "../components/about/WhyChooseUsSection";
 import ContactFormSection from "../components/about/ContactFormSection";
 
 const AboutUsPage: React.FC = () => {
@@ -31,6 +32,8 @@ const AboutUsPage: React.FC = () => {
             <ValuesSection />
           </div>
         </div>
+
+        <WhyChooseUsSection />
 
         <ContactFormSection action={action} setAction={setAction} />
       </div>

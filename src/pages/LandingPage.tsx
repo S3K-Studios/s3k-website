@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Button, Card, CardBody, Image } from "@heroui/react";
-import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -35,7 +34,9 @@ const LandingPage: React.FC = () => {
           <h2 className="text-3xl font-bold mb-8 text-center">
             {t("landing.featuredGames")}
           </h2>
-          {gamesLoading && <div className="text-center py-8">Yükleniyor...</div>}
+          {gamesLoading && (
+            <div className="text-center py-8">Yükleniyor...</div>
+          )}
           {!gamesLoading && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {games.map((game) => (
@@ -65,28 +66,6 @@ const LandingPage: React.FC = () => {
               ))}
             </div>
           )}
-        </section>
-
-        <section className="text-center mb-16" id="why-choose-us">
-          <h2 className="text-3xl font-bold mb-8">
-            {t("landing.whyChooseUs")}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { icon: "lucide:wand-2", title: t("landing.innovativeGameplay") },
-              { icon: "lucide:heart", title: t("landing.passionateTeam") },
-              { icon: "lucide:trophy", title: t("landing.awardWinningStudio") },
-            ].map((feature, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <Icon
-                  className="text-5xl text-primary mb-4"
-                  icon={feature.icon}
-                />
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-foreground-500">{t("landing.lorem")}</p>
-              </div>
-            ))}
-          </div>
         </section>
       </div>
     </>

@@ -50,7 +50,7 @@ const LegalPage: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <div className="container mx-auto px-4 pt-24 pb-12 max-w-4xl">
       <div className="bg-content1 p-8 rounded-2xl shadow-xl border border-divider">
         {renderer(app, lang)}
       </div>
