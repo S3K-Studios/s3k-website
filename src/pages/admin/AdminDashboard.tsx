@@ -90,15 +90,20 @@ const AdminDashboard: React.FC = () => {
     }
   };
 
-  const handleToggleGameActive = async (item: any) => {
+  const toggleableCollections: string[] = [
+    collections.GAMES,
+    collections.TEAM_MEMBERS,
+  ];
+
+  const handleToggleActive = async (item: any) => {
     try {
       const nextActive = item.active === false;
 
-      await saveDocument(collections.GAMES, item.id, {
+      await saveDocument(activeTab, item.id, {
         ...item,
         active: nextActive,
       });
-      await refreshData(collections.GAMES); // Invalidate global cache
+      await refreshData(activeTab); // Invalidate global cache
       loadData();
     } catch (error) {
       console.error("Durum güncellenirken hata:", error);
@@ -108,6 +113,20 @@ const AdminDashboard: React.FC = () => {
   const openForm = (item: any = null) => {
     setEditingItem(item);
     setIsModalOpen(true);
+  };
+
+  const statusColumn = {
+    key: "active",
+    label: "Durum",
+    render: (item: any) => (
+      <Chip
+        color={item.active === false ? "default" : "success"}
+        size="sm"
+        variant="flat"
+      >
+        {item.active === false ? "Pasif" : "Aktif"}
+      </Chip>
+    ),
   };
 
   const getColumns = () => {
@@ -123,24 +142,13 @@ const AdminDashboard: React.FC = () => {
         return [
           { key: "id", label: "ID" },
           { key: "releaseDate", label: "Çıkış" },
-          {
-            key: "active",
-            label: "Durum",
-            render: (item: any) => (
-              <Chip
-                color={item.active === false ? "default" : "success"}
-                size="sm"
-                variant="flat"
-              >
-                {item.active === false ? "Pasif" : "Aktif"}
-              </Chip>
-            ),
-          },
+          statusColumn,
           { key: "actions", label: "İşlemler" },
         ];
       case collections.TEAM_MEMBERS:
         return [
           { key: "id", label: "ID" },
+          statusColumn,
           { key: "actions", label: "İşlemler" },
         ];
       case collections.ABOUT_TIMELINE:
@@ -368,13 +376,13 @@ const AdminDashboard: React.FC = () => {
             columns={getColumns()}
             data={data}
             extraActions={
-              activeTab === collections.GAMES
+              toggleableCollections.includes(activeTab)
                 ? (item: any) => (
                     <Button
                       color={item.active === false ? "success" : "warning"}
                       size="sm"
                       variant="flat"
-                      onClick={() => handleToggleGameActive(item)}
+                      onClick={() => handleToggleActive(item)}
                     >
                       {item.active === false ? "Aktif Et" : "Pasif Yap"}
                     </Button>

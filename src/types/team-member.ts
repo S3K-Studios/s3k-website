@@ -47,5 +47,7 @@ export interface TeamMemberTranslation {
 
 export interface TeamMember {
   id: string;
+  /** Whether this member is shown on the public site. Missing/undefined is treated as active, for backward compatibility with existing docs. */
+  active?: boolean;
   translations: TeamMemberTranslation[];
 }
