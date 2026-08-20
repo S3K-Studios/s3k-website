@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tailwind Typography (prose) ve tema desteği */
+
+/* Karanlık tema için prose renkleri */
+.prose {
+  @apply text-gray-800;
+}
+.dark .prose {
+  @apply text-gray-100;
+}
+
+/* Karanlık tema için kod blokları */
+.prose pre {
+  @apply bg-gray-100 text-gray-800;
+}
+.dark .prose pre {
+  @apply bg-gray-900 text-gray-100;
+}
+
+.prose code {
+  @apply text-pink-600;
+}
+.dark .prose code {
+  @apply text-pink-400;
+}
+
+/* Sabit header nedeniyle kaydırma hedefi ayarı */
+[id] {
+  scroll-margin-top: 100px;
+}

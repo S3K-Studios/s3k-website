@@ -1,0 +1,32 @@
+image: node:20
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Build and Deploy to Firebase (Merge)
+          caches:
+            - node
+          script:
+            - npm ci
+            - npm run build
+            - pipe: atlassian/firebase-deploy:5.1.1
+              variables:
+                KEY_FILE: $FIREBASE_SERVICE_ACCOUNT_S3KSTUDIOS_WEB
+                PROJECT_ID: "s3kstudios-web"
+
+  pull-requests:
+    "**":
+      - step:
+          name: Build and Preview (Pull Request)
+          caches:
+            - node
+          script:
+            - npm ci
+            - npm run build
+            - pipe: atlassian/firebase-deploy:5.1.1
+              variables:
+                KEY_FILE: $FIREBASE_SERVICE_ACCOUNT_S3KSTUDIOS_WEB
+                PROJECT_ID: "s3kstudios-web"
+                # Bitbucket doesn't have a direct equivalent to "channelId: live" or "preview" in the same way GH action does
+                # but we can use flags if needed. The default behavior is usually what's needed.
