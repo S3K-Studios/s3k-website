@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { Card, CardBody, Image, Button, Chip } from "@heroui/react";
+import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 
 import { useGames } from "../hooks/useGames";
@@ -12,12 +13,20 @@ const legalDocLabels: Record<string, { tr: string; en: string }> = {
   "data-deletion": { tr: "Hesap ve Veri Silme", en: "Account & Data Deletion" },
 };
 
+const storeIcon = (storeName: string) => {
+  const name = storeName.toLowerCase();
+
+  if (name.includes("app store")) return "lucide:apple";
+  if (name.includes("google play")) return "lucide:play";
+
+  return "lucide:external-link";
+};
+
 const GameDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { t, i18n } = useTranslation();
   const lang: "tr" | "en" = i18n.language === "tr" ? "tr" : "en";
   const { games, loading, error } = useGames();
-  const legalApp = getLegalApp(id);
 
   if (loading) {
     return (
@@ -36,6 +45,7 @@ const GameDetailPage: React.FC = () => {
   }
 
   const game = games.find((g) => g.id === id);
+  const legalApp = game ? getLegalApp(game.legalSlug ?? game.id) : undefined;
 
   if (!game) {
     return (
@@ -95,6 +105,7 @@ const GameDetailPage: React.FC = () => {
                     fullWidth
                     as="a"
                     href={link.url}
+                    startContent={<Icon icon={storeIcon(link.name)} />}
                     target="_blank"
                   >
                     {link.name}

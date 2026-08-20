@@ -3,6 +3,7 @@ import { Game } from "../types/game";
 export const games: Game[] = [
   {
     id: "atomic-boom",
+    legalSlug: "atomic-boom",
     translations: [
       {
         language: "tr",
@@ -41,11 +42,11 @@ export const games: Game[] = [
     ],
   },
   {
-    id: "777-pinbal",
+    id: "777-pinball",
     translations: [
       {
         language: "tr",
-        title: "777 Pinbal",
+        title: "777 Pinball",
         description:
           "Klasik langırt hissini modern mekaniklerle buluşturan, jackpot temalı bir pinball deneyimi.",
         image: "https://img.heroui.chat/image/game?w=600&h=340&u=777-pinbal",
@@ -62,7 +63,7 @@ export const games: Game[] = [
       },
       {
         language: "en",
-        title: "777 Pinbal",
+        title: "777 Pinball",
         description:
           "A jackpot-themed pinball experience blending classic table feel with modern mechanics.",
         image: "https://img.heroui.chat/image/game?w=600&h=340&u=777-pinbal",
