@@ -31,7 +31,16 @@ const LegalIndexPage: React.FC = () => {
             key={app.slug}
             className="bg-content1 p-6 rounded-2xl border border-divider"
           >
-            <h2 className="text-xl font-semibold mb-3">{app.name}</h2>
+            <div className="flex items-center gap-3 mb-3">
+              {app.icon && (
+                <img
+                  alt={app.name}
+                  className="w-8 h-8 rounded-lg object-cover"
+                  src={app.icon}
+                />
+              )}
+              <h2 className="text-xl font-semibold">{app.name}</h2>
+            </div>
             <div className="flex flex-wrap gap-3">
               {app.docs.map((doc) => (
                 <Link

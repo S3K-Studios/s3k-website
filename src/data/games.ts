@@ -10,7 +10,7 @@ export const games: Game[] = [
         title: "Splitomic",
         description:
           "Zincirleme patlamalarla dolu, hızlı tempolu bir bulmaca-aksiyon oyunu.",
-        image: "https://img.heroui.chat/image/game?w=600&h=340&u=splitomic",
+        image: "/games/splitomic/banner.webp",
         features: [
           "Zincirleme patlama mekaniği",
           "Çok oyunculu mod",
@@ -27,7 +27,7 @@ export const games: Game[] = [
         title: "Splitomic",
         description:
           "A fast-paced puzzle-action game built around chain-reaction explosions.",
-        image: "https://img.heroui.chat/image/game?w=600&h=340&u=splitomic",
+        image: "/games/splitomic/banner.webp",
         features: [
           "Chain-reaction explosion mechanics",
           "Multiplayer mode",

@@ -20,6 +20,7 @@ export const legalApps: LegalAppConfig[] = [
     supportEmail: "info@s3kstudios.com",
     lastUpdated: "2026-09-16",
     docs: ["privacy", "terms", "data-deletion"],
+    icon: "/games/splitomic/icon.webp",
     content: splitomicLegalContent,
   },
 ];

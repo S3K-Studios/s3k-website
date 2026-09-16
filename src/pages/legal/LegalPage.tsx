@@ -36,6 +36,16 @@ const LegalPage: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 pt-24 pb-12 max-w-4xl">
+      {app.icon && (
+        <div className="flex items-center gap-3 mb-4">
+          <img
+            alt={app.name}
+            className="w-10 h-10 rounded-xl object-cover"
+            src={app.icon}
+          />
+          <span className="text-lg font-semibold">{app.name}</span>
+        </div>
+      )}
       <div className="bg-content1 p-8 rounded-2xl shadow-xl border border-divider">
         {renderer(app, lang)}
       </div>
