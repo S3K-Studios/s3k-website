@@ -3,22 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { getLegalApp } from "../../data/legalApps";
-import { LegalAppConfig, LegalDocType } from "../../types/legal";
-
-import {
-  renderPrivacyPolicy,
-  renderTerms,
-  renderDataDeletion,
-} from "./legalTemplates";
-
-const docRenderers: Record<
-  LegalDocType,
-  (app: LegalAppConfig, lang: "tr" | "en") => JSX.Element
-> = {
-  privacy: renderPrivacyPolicy,
-  terms: renderTerms,
-  "data-deletion": renderDataDeletion,
-};
+import { LegalDocType } from "../../types/legal";
 
 const LegalPage: React.FC = () => {
   const { appSlug, doc } = useParams<{ appSlug: string; doc: string }>();
@@ -29,7 +14,7 @@ const LegalPage: React.FC = () => {
   const isValidDocType =
     doc === "privacy" || doc === "terms" || doc === "data-deletion";
   const docType = doc as LegalDocType;
-  const renderer = isValidDocType ? docRenderers[docType] : undefined;
+  const renderer = isValidDocType ? app?.content[docType] : undefined;
 
   if (!app || !renderer || !app.docs.includes(docType)) {
     return (

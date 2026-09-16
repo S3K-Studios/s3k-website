@@ -2,15 +2,15 @@ import { Game } from "../types/game";
 
 export const games: Game[] = [
   {
-    id: "atomic-boom",
-    legalSlug: "atomic-boom",
+    id: "splitomic",
+    legalSlug: "splitomic",
     translations: [
       {
         language: "tr",
-        title: "Atomic Boom",
+        title: "Splitomic",
         description:
           "Zincirleme patlamalarla dolu, hızlı tempolu bir bulmaca-aksiyon oyunu.",
-        image: "https://img.heroui.chat/image/game?w=600&h=340&u=atomic-boom",
+        image: "https://img.heroui.chat/image/game?w=600&h=340&u=splitomic",
         features: [
           "Zincirleme patlama mekaniği",
           "Çok oyunculu mod",
@@ -24,10 +24,10 @@ export const games: Game[] = [
       },
       {
         language: "en",
-        title: "Atomic Boom",
+        title: "Splitomic",
         description:
           "A fast-paced puzzle-action game built around chain-reaction explosions.",
-        image: "https://img.heroui.chat/image/game?w=600&h=340&u=atomic-boom",
+        image: "https://img.heroui.chat/image/game?w=600&h=340&u=splitomic",
         features: [
           "Chain-reaction explosion mechanics",
           "Multiplayer mode",

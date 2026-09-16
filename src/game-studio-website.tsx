@@ -1,10 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { HeroUIProvider, useDisclosure } from "@heroui/react";
 
 import Header from "./components/Header";
@@ -52,20 +47,6 @@ const App: React.FC = () => {
                       <Route
                         component={LegalPage}
                         path="/legal/:appSlug/:doc"
-                      />
-
-                      {/* Legacy Atomic Boom URLs — kept working, redirect to the new per-app routes */}
-                      <Redirect
-                        from="/atomicboom/privacy"
-                        to="/legal/atomic-boom/privacy"
-                      />
-                      <Redirect
-                        from="/atomicboom/terms"
-                        to="/legal/atomic-boom/terms"
-                      />
-                      <Redirect
-                        from="/atomicboom/data-deletion"
-                        to="/legal/atomic-boom/data-deletion"
                       />
                     </Switch>
                   </main>
