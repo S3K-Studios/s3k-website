@@ -16,8 +16,8 @@ export const whyChooseUsFeatures: WhyChooseUsFeature[] = [
     descKey: "landing.passionateTeamDesc",
   },
   {
-    icon: "lucide:trophy",
-    titleKey: "landing.awardWinningStudio",
-    descKey: "landing.awardWinningStudioDesc",
+    icon: "lucide:smartphone",
+    titleKey: "landing.crossPlatform",
+    descKey: "landing.crossPlatformDesc",
   },
 ];

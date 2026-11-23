@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="w-full md:w-1/3 text-sm text-foreground-500">
             <p>
-              &copy; 2025 {t("footer.gameStudio")}.{" "}
+              &copy; {new Date().getFullYear()} {t("footer.gameStudio")}.{" "}
               {t("footer.allRightsReserved")}
             </p>
             <Link
