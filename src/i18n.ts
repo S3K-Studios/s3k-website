@@ -28,4 +28,22 @@ i18n
     },
   });
 
+const documentTitles: Record<string, string> = {
+  tr: "S3K Studios - Oyun Geliştirme Stüdyosu",
+  en: "S3K Studios - Game Development Studio",
+};
+
+// Keep <html lang> and the tab title in sync with the active language.
+// CSS `uppercase` follows the lang attribute, so an English page served
+// with lang="tr" renders "SPECİAL" instead of "SPECIAL".
+const syncDocumentLanguage = (lng: string) => {
+  const lang = lng.startsWith("en") ? "en" : "tr";
+
+  document.documentElement.lang = lang;
+  document.title = documentTitles[lang];
+};
+
+syncDocumentLanguage(i18n.resolvedLanguage || i18n.language || "tr");
+i18n.on("languageChanged", syncDocumentLanguage);
+
 export default i18n;

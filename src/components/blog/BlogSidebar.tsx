@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, Input, Chip, Button } from "@heroui/react";
-import { Link } from "react-router-dom";
 import { SearchIcon } from "../icons";
 import { useTranslation } from "react-i18next";
 
@@ -30,30 +29,6 @@ export const BlogSidebar: React.FC = React.memo(() => {
                         >
                             {tag}
                         </Chip>
-                    ))}
-                </div>
-            </Card>
-
-            <Card className="p-6">
-                <h4 className="mb-4 text-lg font-bold">{t("blog.trending")}</h4>
-                <div className="flex flex-col gap-4">
-                    {[
-                        { id: 1, title: "Why we switched from Unity to Godot" },
-                        { id: 2, title: "Top 10 assets for prototyping" },
-                        { id: 3, title: "Marketing your game with 0 budget" },
-                    ].map((item) => (
-                        <Link
-                            key={item.id}
-                            to="#"
-                            className="group flex gap-3 items-center"
-                        >
-                            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-divider text-xs font-bold group-hover:bg-primary group-hover:text-white transition-colors">
-                                {item.id}
-                            </span>
-                            <span className="text-sm font-medium group-hover:text-primary transition-colors">
-                                {item.title}
-                            </span>
-                        </Link>
                     ))}
                 </div>
             </Card>
